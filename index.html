@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hot or Cold</title>
+        <link rel=StyleSheet href="hotcold.css" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="hotcold.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="intro">
+            Are you ready to play the game of Hot or Cold?
+            <button class="btn" id="btnplay"><span class="btntxt">Let's Play >>></span></button> 
+        </div>
+        <div id="gamearea">
+            <div class="intstep" id="rangepane">
+                Number range for guessing: from
+                <input type="number" value="100" class="intxt" id="inlow" />
+                to
+                <input type="number" value="500" class="intxt" id="inhigh" />
+                <button class="btn" id="btnrange"><span class="btntxt">Set Range</span></button>
+            </div>
+            <div class="intstep" id="intropane">
+                I'm thinking of a number from
+                <span class="rangetxt" id="rnglow">low</span>
+                to
+                <span class="rangetxt" id="rnghigh">high</span>.
+            </div>
+            <div class="intstep" id="guesspane">
+                Make your guess:
+                <input type="number" class="intxt" id="inguess" />
+                <button class="btn" id="btnguess"><span class="btntxt">OK</span></button>
+            </div>
+            <div class="intstep" id="responsepane">
+                <span class="out" id="entry">Guess</span>
+                <span class="out" id="outcome">COLD/WARM/HOT/BINGO</span>
+                <span class="out" id="direction">HIGHER/LOWER/BINGO</span>
+            </div>
+            <div id="message">Congratulations! You guessed it!</div>
+        </div>
+    </body>
+</html>
