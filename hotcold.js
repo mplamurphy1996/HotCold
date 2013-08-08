@@ -29,14 +29,14 @@ $(document).ready(function() {
         }
     });
     
-    $("input").keyup(function(event) {
-        if(event.keyCode == 13){
-            var prev = $(this).val();
-            if (!$.isNumeric($(this).val())) {
-                $(this).text(prev);
-            }
-        }
-    });
+    //$("input").keyup(function(event) {
+    //    if(event.keyCode == 13){
+    //        var prev = $(this).val();
+    //        if (!$.isNumeric($(this).val())) {
+    //            $(this).text(prev);
+    //        }
+    //    }
+    //});
     
     // controls ENTER button events on input boxes
     $("#inguess").keyup(function(event){
