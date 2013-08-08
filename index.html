@@ -9,25 +9,24 @@
     <body>
         <div id="intro">
             Are you ready to play the game of Hot or Cold?
-            <button class="btn" id="btnplay"><span class="btntxt">Let's Play >>></span></button> 
+            <button class="btn" id="btnplay"><span class="btntxt" id="txtplay">Let's Play >>></span></button> 
         </div>
         <div id="gamearea">
             <div class="intstep" id="rangepane">
-                Number range for guessing: from
-                <input type="number" value="100" class="intxt" id="inlow" />
-                to
-                <input type="number" value="500" class="intxt" id="inhigh" />
+                Number range for guessing:
+                from <input type="number" value="100" id="inlow" />
+                to <input type="number" value="500" id="inhigh" />
                 <button class="btn" id="btnrange"><span class="btntxt">Set Range</span></button>
             </div>
             <div class="intstep" id="intropane">
                 I'm thinking of a number from
                 <span class="rangetxt" id="rnglow">low</span>
                 to
-                <span class="rangetxt" id="rnghigh">high</span>.
+                <span class="rangetxt" id="rnghigh">high</span>...
             </div>
             <div class="intstep" id="guesspane">
                 Make your guess:
-                <input type="number" class="intxt" id="inguess" />
+                <input type="number" id="inguess" />
                 <button class="btn" id="btnguess"><span class="btntxt">OK</span></button>
             </div>
             <div class="intstep" id="responsepane">

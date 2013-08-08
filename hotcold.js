@@ -29,6 +29,22 @@ $(document).ready(function() {
         }
     });
     
+    $("input").keyup(function(event) {
+        if(event.keyCode == 13){
+            var prev = $(this).val();
+            if (!$.isNumeric($(this).val())) {
+                $(this).text(prev);
+            }
+        }
+    });
+    
+    // controls ENTER button events on input boxes
+    $("#inguess").keyup(function(event){
+        if(event.keyCode == 13){
+            $("#btnguess").click();
+        }
+    });
+    
     /* Range object */
     function GuessRange(low, high, target) {
         this.low = low;
@@ -54,6 +70,7 @@ $(document).ready(function() {
     var _HOTSTAT = 0.10;
     var _STATUS = ["Cold", "Warm", "Hot", "**BINGO**"];
     var _DIR = ["Higher", "Lower", "**BINGO**"];
+    var _RESET = "Replay >>>";
     function DIFF(val1, val2, stddev) {
         return (Math.abs(val1-val2) <= stddev);
     }
@@ -91,12 +108,22 @@ $(document).ready(function() {
     function setResponseColor(status) {
         var blkcolor = "#bbbbbb";
         switch (status) {
-            case _STATUS[0]: blkcolor = "'#1111ee'"; break;
-            case _STATUS[1]: blkcolor = "'#cd8825'"; break;
-            case _STATUS[2]: blkcolor = "'#ee1111'"; break;
-            case _STATUS[3]: blkcolor = "'#ee11ee'"; break;
+            case _STATUS[0]: blkcolor = "#1111ee"; break;
+            case _STATUS[1]: blkcolor = "#cd8825"; break;
+            case _STATUS[2]: blkcolor = "#ee1111"; break;
+            case _STATUS[3]: blkcolor = "#ee11ee"; break;
         }
-        $(".out").css({ 'background' : blkcolor });
+        var txtcolor = "1px solid "+blkcolor;
+        $(".out").css({'background' : blkcolor,
+                       'border' : txtcolor});
+        
+        /*BINGO case */
+        if (status === _STATUS[3]) {
+            $(".out").css({'font-weight' : 'bolder',
+                           'font-size' : '20px'});
+            $("#txtplay").text(_RESET);
+            $("#btnplay").css({'background' : '#11ee11'});
+        }
     }
     function setResponse(guess, status, direction) {
         $("#entry").text(guess);
@@ -112,6 +139,7 @@ $(document).ready(function() {
         $("#rnglow").text(low);
         $("#rnghigh").text(high);
         $("#inguess").val(low); /* auto set first guess to low value */
+        $("#btnplay").hide(); /* let's turn off unitl guessed! */
     }
     
     function randomizeTarget(low, high) {
@@ -129,6 +157,7 @@ $(document).ready(function() {
     {
         if (msgon == true) {
             $("#message").show();
+            $("#btnplay").show();
         }
         else {
             $("#message").hide();

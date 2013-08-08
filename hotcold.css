@@ -55,16 +55,17 @@ table {
 .intstep {
 	margin: 20px 0px 20px 0;
 	width: inherit;
+	text-align: center;
 }
 .btn {
 	position: relative;
-        float: none;
         background: #8148bc;
         border: 1px solid transparent;
-	border-radius: 2px;
-	margin: 0 20px 0 10px;
-        height: 20px;
+	border-radius: 4px;
+	/*margin: 0 10px 0 10px;*/
+        height: 25px;
         width: auto;
+	vertical-align: middle;
 }
 .btntxt {
 	color: white;
@@ -77,7 +78,7 @@ table {
 }
 input {
 	width: 100px;
-	height: 20px;
+	height: 25px;
 }
 .rangetxt {
 	color: red;
@@ -87,9 +88,10 @@ input {
 .out {
 	background: #dddddd;
 	border: 1px solid green;
-	padding: 10px 50px 10px 50px;
+	padding: 5px 50px 5px 50px;
 	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-	font-size: 16px;
+	font-size: 14px;
+	font-weight: bold;
 }
 #intro {
 	display: block;
@@ -98,11 +100,13 @@ input {
 	font-size: 24px;
 	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 	text-align: center;
+	vertical-align: middle;
 }
 #message {
 	color: #ee11ee;
 	font-size: 36px;
 	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+	text-align: center;
 }
 
 #gamearea {
